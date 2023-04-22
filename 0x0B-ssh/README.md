@@ -21,4 +21,4 @@
 
 | Tasks | Description | File |
 | ----- | ------ | -----|
-| <ul><li> - [ ] Task 4 </li></ul> | 4. Client configuration file (w/ Puppet) | [100-puppet_ssh_config.pp](100-puppet_ssh_config.pp) |
+| <ul><li> - [x] Task 4 </li></ul> | 4. Client configuration file (w/ Puppet) | [100-puppet_ssh_config.pp](100-puppet_ssh_config.pp) |
