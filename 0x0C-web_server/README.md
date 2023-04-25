@@ -16,7 +16,7 @@
 | <ul><li> - [x] Task 1 </li></ul> | 1. Install nginx web server | [1-install_nginx_web_server](1-install_nginx_web_server) |
 | <ul><li> - [x] Task 2 </li></ul> | 2. Setup a domain name | [2-setup_a_domain_name](2-setup_a_domain_name) |
 | <ul><li> - [x] Task 3 </li></ul> | 3. Redirection | [3-redirection](3-redirection) |
-| <ul><li> - [ ] Task 4 </li></ul> | 4. Not found page 404 | [4-not_found_page_404](4-not_found_page_404) |
+| <ul><li> - [x] Task 4 </li></ul> | 4. Not found page 404 | [4-not_found_page_404](4-not_found_page_404) |
 
 ### Advanced
 
