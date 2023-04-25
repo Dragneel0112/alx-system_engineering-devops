@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Redirects page to Google
+sudo apt-get install -y nginx
+sudo bash -c "echo 'Hello World!'> /var/www/html/index.nginx-debian.html"
+REDIRECT="\\\tlocation \/redirect_me{\n\t\treturn 301 http:\/\/www.google.com;}"
+sudo sed -i "47i $REDIRECT" /etc/nginx/sites-available/default
+sudo service nginx restart
