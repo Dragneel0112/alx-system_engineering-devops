@@ -22,4 +22,4 @@
 
 | Tasks | Description | File |
 | ----- | ----- | ----- |
-| <ul><li> - [ ] Task 5 </li></ul> | 5. Install Nginx web server (w/ Puppet) | [7-puppet_install_nginx_web_server.pp](7-puppet_install_nginx_web_server.pp) |
+| <ul><li> - [x] Task 5 </li></ul> | 5. Install Nginx web server (w/ Puppet) | [7-puppet_install_nginx_web_server.pp](7-puppet_install_nginx_web_server.pp) |
