@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Starts apache server in a container
 sudo service apache2 start
+sudo bash -c "echo Hello Holberton > /var/www/html/index.html"
