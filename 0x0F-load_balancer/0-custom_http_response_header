@@ -1,13 +1,23 @@
 #!/usr/bin/env bash
-# Redirects page to Google and adds custom error
-sudo apt-get install -y nginx
-sudo bash -c "echo 'Hello World!'> /var/www/html/index.nginx-debian.html"
-REDIRECT="\\\tlocation \/redirect_me{\n\t\treturn 301 http:\/\/www.google.com;}"
-sudo sed -i "47i $REDIRECT" /etc/nginx/sites-available/default
-sudo touch /usr/share/nginx/html/404.html
-sudo bash -c "echo Ceci n'est pas une page > /usr/share/nginx/html/404.html"
-ERROR="\\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal    ;\n\t}"
-sudo sed -i "49i $ERROR" /etc/nginx/sites-available/default
-HOST= "\\\tadd_header X-Served-By $hostname;"
-sudo sed -i "54i $HOST" /etc/nginx/sites-available/default
+# Redirects page to Google and adds custom error and header
+INDEX="Hello World!"
+ERROR="Ceci n'est pas une page - 404"
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+echo "$INDEX" | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
+echo "$ERROR" | sudo tee /var/www/html/custom_404.html > /dev/null
+
+# config redirection
+sudo sed -i '/^\sserver_name.*/a \     location \/redirect_me{\n\t\treturn 301 http:\/\/www.google.com;}' /etc/nginx/sites-available/default
+
+# config custom 404
+sudo sed -i '/^\slocation.*/i \        error_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal    ;\n\t}' /etc/nginx/sites-available/default
+
+# shellcheck disable=SC2154
+# config custom response header
+sudo sed -i '/^\slocation.*/i \        add_header X-Served-By $hostname;' /etc/nginx/sites-available/default
+
+# run server
 sudo service nginx start
