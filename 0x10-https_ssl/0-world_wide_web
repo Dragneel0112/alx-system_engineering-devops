@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Uses dig and awk to obtain specific subdomains and ip from a website
+# shellcheck disable=SC2086
+
+# Uses args to obtain the specific domain and ip requested
+get_specific_subdomain () {
+
+	dig $2.$1 | awk 'c&&!--c;/;; ANSWER SECTION:/{c=1}' | awk -v subdom=$2 '{ print "The subdomain " subdom " is a " $4 " record and points to " $5}'
+
+	return 0
+}
+
+# Gets all the subdomains from requested website
+get_all_subdomain () {
+
+	subdomains=("www" "lb-01" "web-01" "web-02")
+		
+	for subdomain in "${subdomains[@]}"
+	do
+		dig $subdomain.$1 | awk 'c&&!--c;/;; ANSWER SECTION:/{c=1}' | awk -v subdom="$subdomain" '{ print "The subdomain " subdom " is a " $4 " record and points to " $5}'
+	done
+
+	return 0
+}
+
+# Determines which function by number of args passed
+if [ -z $2 ]
+then
+	get_all_subdomain "$1"
+else
+	get_specific_subdomain "$1" "$2"
+fi
