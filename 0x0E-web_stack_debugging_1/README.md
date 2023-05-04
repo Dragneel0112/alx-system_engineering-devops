@@ -12,7 +12,7 @@
 
 | Tasks | Description | Files |
 | ----- | ------ | ----- |
-| <ul><li> - [x] Task 0 </li></ul> | 0. Nginx likes port 80 | [0-nginx_likes_port_80](0-nginx_likes_port_80)
+| <ul><li> - [ ] Task 0 </li></ul> | 0. Nginx likes port 80 | [0-nginx_likes_port_80](0-nginx_likes_port_80)
 
 
 ### Advanced
