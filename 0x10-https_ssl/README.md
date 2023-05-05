@@ -19,4 +19,4 @@
 
 | Tasks | Description | Files |
 | ----- | ----- | ----- |
-| <ul><li> - [ ] Task 2 </li></ul> | 2. No loophole in your website traffic | [100-redirect_http_to_https](100-redirect_http_to_https) |
+| <ul><li> - [x] Task 2 </li></ul> | 2. No loophole in your website traffic | [100-redirect_http_to_https](100-redirect_http_to_https) |
