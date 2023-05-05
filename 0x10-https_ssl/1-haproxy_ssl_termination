@@ -7,6 +7,8 @@ global
         user haproxy
         group haproxy
         daemon
+        maxconn 2048
+        tune.ssl.default-dh-param 2048
 
         # Default SSL material locations
         ca-base /etc/ssl/certs
@@ -22,6 +24,8 @@ defaults
         mode    http
         option  httplog
         option  dontlognull
+        option forwardfor
+        option http-server-close
         timeout connect 5000
         timeout client  50000
         timeout server  50000
@@ -34,23 +38,26 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
  
 frontend load_balancer
-        bind *:80
 
+        # bind *:80
         # New config that listens on port 443 for SSL connections
         bind *:443 ssl crt /etc/ssl/www.ruvenpillay.tech/www.ruvenpillay.tech.pem
-
+        mode http
+        # Redirect if HTTPS is *not* used
+        # redirect scheme https code 301 if !{ ssl_fc }
 
         # Test URI to see if its a letsencrypt request
-        acl letsencrypt-acl path_beg /.well-known/acme-challenge/
-        use_backend letsencrypt-backend if letsencrypt-acl
+        #acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+        #use_backend letsencrypt-backend if letsencrypt-acl
 
         default_backend myservers
 
 # LE Backend
-backend letsencrypt-backend
-        server letsencrypt 127.0.0.1:8888
+#backend letsencrypt-backend
+#       server letsencrypt 127.0.0.1:54321
 
 backend myservers
+        mode http
         balance roundrobin
         server 165847-web-01 54.237.108.151 check port 80
         server 165847-web-02 100.25.111.49 check port 80
