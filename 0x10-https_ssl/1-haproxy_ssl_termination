@@ -47,14 +47,14 @@ frontend load_balancer
         # redirect scheme https code 301 if !{ ssl_fc }
 
         # Test URI to see if its a letsencrypt request
-        #acl letsencrypt-acl path_beg /.well-known/acme-challenge/
-        #use_backend letsencrypt-backend if letsencrypt-acl
+        acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+        use_backend letsencrypt-backend if letsencrypt-acl
 
         default_backend myservers
 
 # LE Backend
-#backend letsencrypt-backend
-#       server letsencrypt 127.0.0.1:54321
+backend letsencrypt-backend
+       server letsencrypt 127.0.0.1:54321
 
 backend myservers
         mode http
