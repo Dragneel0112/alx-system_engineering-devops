@@ -12,7 +12,7 @@
 
 | Tasks | Description | Files |
 | ----- | ----- | ----- |
-| <ul><li> - [ ] Task 0 </li></ul> | 0. Block all incoming traffic but | [0-block_all_incoming_traffic_but](0-block_all_incoming_traffic_but) |
+| <ul><li> - [x] Task 0 </li></ul> | 0. Block all incoming traffic but | [0-block_all_incoming_traffic_but](0-block_all_incoming_traffic_but) |
 
 ### Advanced
 
