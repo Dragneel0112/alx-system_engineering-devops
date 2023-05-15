@@ -18,4 +18,4 @@
 
 | Tasks | Description | Files |
 | ----- | ------ | ----- |
-| <ul><li> - [ ] Task 1 </li></ul> | 1. Port forwarding | [100-port_forwarding](100-port_forwarding) |
+| <ul><li> - [x] Task 1 </li></ul> | 1. Port forwarding | [100-port_forwarding](100-port_forwarding) |
