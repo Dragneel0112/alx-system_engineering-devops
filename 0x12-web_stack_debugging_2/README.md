@@ -20,4 +20,4 @@
 
 | Tasks | Description | Files |
 | ----- | ----- | ----- |
-| <ul><li> - [ ] Task 2 </li></ul> | 2. 7 lines or less | [100-fix_in_7_lines_or_less](100-fix_in_7_lines_or_less) | 
+| <ul><li> - [x] Task 2 </li></ul> | 2. 7 lines or less | [100-fix_in_7_lines_or_less](100-fix_in_7_lines_or_less) | 
