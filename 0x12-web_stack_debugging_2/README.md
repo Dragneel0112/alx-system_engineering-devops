@@ -12,8 +12,8 @@
 
 | Tasks | Description | Files |
 | ----- | ----- | ----- |
-| <ul><li> - [ ] Task 0 </li></ul> | 0. Run software as another user | [0-iamsomeoneelse](0-iamsomeoneelse) |
-| <ul><li> - [ ] Task 1 </li></ul> | 1. Run Nginx as Nginx | [1-run_nginx_as_nginx](1-run_nginx_as_nginx) |
+| <ul><li> - [x] Task 0 </li></ul> | 0. Run software as another user | [0-iamsomeoneelse](0-iamsomeoneelse) |
+| <ul><li> - [x] Task 1 </li></ul> | 1. Run Nginx as Nginx | [1-run_nginx_as_nginx](1-run_nginx_as_nginx) |
 
 
 ### Advanced 
