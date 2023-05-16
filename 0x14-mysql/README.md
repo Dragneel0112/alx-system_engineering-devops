@@ -17,4 +17,4 @@
 | <ul><li> - [x] Task 2   </li></ul> | 2. If only you could see what I've seen with your eyes | N/A |
 | <ul><li> - [x] Task 3   </li></ul> | 3. Quite an experience to live in fear, isn't it? | N/A |
 | <ul><li> - [x] Task 4   </li></ul> | 4. Setup a Primary-Replica infrastructure using MySQL | [4-mysql_configuration_primary](4-mysql_configuration_primary), [4-mysql_configuration_replica](4-mysql_configuration_replica) |
-| <ul><li> - [ ] Task 5   </li></ul> | 5. MySQL backup | [5-mysql_backup](5-mysql_backup) |
+| <ul><li> - [x] Task 5   </li></ul> | 5. MySQL backup | [5-mysql_backup](5-mysql_backup) |
