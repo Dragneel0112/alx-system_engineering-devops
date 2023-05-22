@@ -3,35 +3,34 @@
 Requests from API
 """
 
-from json import load
-import requests
+from requests import get
 from sys import argv
 
 
 if __name__ == "__main__":
+    todos_url = get('https://jsonplaceholder.typicode.com/todos/')
+    todos_data = todos_url.json()
+    todos_completed = 0
+    todos_count = 0
+    tasks = []
+    user_url = get('https://jsonplaceholder.typicode.com/users')
+    user_data = user_url.json()
 
-    def api_request(resource, param=None):
-        """
-        Retrieve information from API
-        """
-        url = 'https://jsonplaceholder.typicode.com/'
-        url += resource
-        if param:
-            url += ('?' + param[0] + '=' + param[1])
+    for i in user_data:
+        if i.get('id') == int(argv[1]):
+            employee = i.get('name')
 
-        # Request url
-        r = requests.get(url)
+    for i in todos_data:
+        if i.get('userId') == int(argv[1]):
+            todos_count += 1
 
-        # Extract json response
-        r = r.json()
-        return r
+            if i.get('completed') is True:
+                todos_completed += 1
+                tasks.append(i.get('title'))
 
-    user = api_request('users', ('id', argv[1]))
-    tasks = api_request('todos', ('userId', argv[1]))
-    tasks_completed = [task for task in tasks if task['completed']]
+    print("Employee {} is done with tasks({}/{}):".format(employee,
+                                                          todos_completed,
+                                                          todos_count))
 
-    print('Employee {} is done with tasks({}/{}):'.format(user[0]['name'],
-                                                          len(tasks_completed),
-                                                          len(tasks)))
-    for task in tasks_completed:
-        print('\t {}'.format(task['title']))
+    for i in tasks:
+        print("\t {}".format(i))
