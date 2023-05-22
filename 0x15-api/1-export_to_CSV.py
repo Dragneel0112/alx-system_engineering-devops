@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-
 """
-Python script that exports data in the CSV format
+Exports data in the CSV format from API
 """
 
 from requests import get
@@ -9,27 +8,27 @@ from sys import argv
 import csv
 
 if __name__ == "__main__":
-    response = get('https://jsonplaceholder.typicode.com/todos/')
-    data = response.json()
+    todos_url = get('https://jsonplaceholder.typicode.com/todos/')
+    todos_data = todos_url.json()
 
-    row = []
-    response2 = get('https://jsonplaceholder.typicode.com/users')
-    data2 = response2.json()
+    task = []
+    user_url = get('https://jsonplaceholder.typicode.com/users')
+    user_data = user_url.json()
 
-    for i in data2:
+    for i in user_data:
         if i['id'] == int(argv[1]):
             employee = i['username']
 
     with open(argv[1] + '.csv', 'w', newline='') as file:
-        writ = csv.writer(file, quoting=csv.QUOTE_ALL)
+        data = csv.writer(file, quoting=csv.QUOTE_ALL)
 
-        for i in data:
+        for i in todos_data:
 
-            row = []
+            task = []
             if i['userId'] == int(argv[1]):
-                row.append(i['userId'])
-                row.append(employee)
-                row.append(i['completed'])
-                row.append(i['title'])
+                task.append(i['userId'])
+                task.append(employee)
+                task.append(i['completed'])
+                task.append(i['title'])
 
-                writ.writerow(row)
+                data.writerow(task)
