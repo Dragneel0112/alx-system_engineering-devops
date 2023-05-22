@@ -3,8 +3,8 @@
 Requests from API
 """
 
-import requests
 from sys import argv
+import requests
 
 
 if __name__ == '__main__':
