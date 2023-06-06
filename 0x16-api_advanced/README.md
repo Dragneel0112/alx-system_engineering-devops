@@ -12,8 +12,8 @@
 
 | Tasks | Description | Files |
 | ----- | ----- | ----- |
-| <ul><li> - [ ] Task 0 </li></ul> | 0. How many subs? | [0-subs.py](0-subs.py) |
-| <ul><li> - [ ] Task 1 </li></ul> | 1. Top Ten | [1-top_ten.py](1-top_ten.py) |
+| <ul><li> - [x] Task 0 </li></ul> | 0. How many subs? | [0-subs.py](0-subs.py) |
+| <ul><li> - [x] Task 1 </li></ul> | 1. Top Ten | [1-top_ten.py](1-top_ten.py) |
 | <ul><li> - [ ] Task 2 </li></ul> | 2. Recurse it! | [2-recurse.py](2-recurse.py) |
 
 ### Advanced
