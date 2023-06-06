@@ -4,6 +4,7 @@ Queries Reddit Api
 '''
 import requests
 
+
 def recurse(subreddit, hot_list=[], next_page=None, count=0):
     '''
     Queries Reddit Api for recursively for titles
