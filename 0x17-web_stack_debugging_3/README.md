@@ -12,4 +12,4 @@
 
 | Tasks | Description | Files |
 | ----- | ----- | -----|
-| <ul><li> - [ ] Task 0 </li></ul> | 0. Strace is your friend | [0-strace_is_your_friend.pp](0-strace_is_your_friend.pp) |
+| <ul><li> - [x] Task 0 </li></ul> | 0. Strace is your friend | [0-strace_is_your_friend.pp](0-strace_is_your_friend.pp) |
